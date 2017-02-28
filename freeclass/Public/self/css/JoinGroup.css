@@ -1,0 +1,11 @@
+.txt{
+    position: relative;
+    border: 1px solid rgb(238,238,238);
+    background: white;
+    float: inherit;
+    display: none;
+}
+.txt p:hover{
+    cursor: pointer;
+    background: rgb(240,240,240);
+}

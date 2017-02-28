@@ -1,0 +1,69 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__PUBLIC__/self/css/MyGroup.css">
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">用户管理</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">用户管理</h1>
+        </div>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">用户管理</div>
+                <div class="cont" id="cont">
+
+                </div>
+                <div class="panel-body">
+                    <table data-toggle="table" data-url="tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                        <thead>
+                        <tr>
+                            <th data-field="id" data-sortable="true">学/工 号</th>
+                            <th data-field="name"  data-sortable="true">姓名</th>
+                            <th data-field="userstatus"  data-sortable="true">身份</th>
+                            <th data-field="email" data-sortable="true">邮箱</th>
+                            <th data-field="mobile" data-sortable="true">手机</th>
+                            <th data-field="campus" data-sortable="true">校区</th>
+                            <th data-field="operation" data-sortable="true">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <for start="0" end="count($user)">
+                            <tr>
+                                <td>{$user[$i]['id']}</td>
+                                <td>{$user[$i]['name']}</td>
+                                <td>{$user[$i]['userstatus']}</td>
+                                <td>{$user[$i]['email']}</td>
+                                <td>{$user[$i]['mobile']}</td>
+                                <td>{$user[$i]['campus']}</td>
+                                <td>
+                                    <a href="{:U('User/record',array('id'=>$user[$i]['id']))}"><span>操作记录</span></a>
+                                    <eq name="user[$i]['isornot']" value="1">
+                                        <a href="{:U('User/operation',array('id'=>$user[$i]['id'],'operation'=>1))}"><span>禁用此用户</span></a>
+                                    </eq>
+                                    <eq name="user[$i]['isornot']" value="0">
+                                        <a href="{:U('User/operation',array('id'=>$user[$i]['id'],'operation'=>0))}"><span>启用此用户</span></a>
+                                    </eq>
+                                    <a href="{:U('User/course',array('id'=>$user[$i]['id']))}"><span>查看课表</span></a>
+                                </td>
+                            </tr>
+                        </for>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!--/.row-->
+</div><!--/.main-->
+<include file="Public:footer"/>
+<script src="__PUBLIC__/self/js/MyGroup.js"></script>
+</body>
+
+</html>

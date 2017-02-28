@@ -1,0 +1,1 @@
+a:6:{i:0;s:9:"teacherid";i:1;s:9:"studentid";i:2;s:11:"studentname";i:3;s:10:"coursename";s:3:"_pk";a:3:{i:0;s:9:"teacherid";i:1;s:9:"studentid";i:2;s:10:"coursename";}s:5:"_type";a:4:{s:9:"teacherid";s:10:"varchar(8)";s:9:"studentid";s:11:"varchar(10)";s:11:"studentname";s:11:"varchar(20)";s:10:"coursename";s:12:"varchar(100)";}}

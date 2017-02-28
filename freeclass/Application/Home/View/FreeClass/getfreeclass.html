@@ -1,0 +1,72 @@
+<include file="Public:header"/>
+
+<link href="__PUBLIC__/css/bootstrap-table.css" rel="stylesheet">
+<link href="__PUBLIC__/self/css/GetFreeClass.css" rel="stylesheet">
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">我的课表</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table data-toggle="table">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>星<br>期<br>一</th>
+                        <th>星<br>期<br>二</th>
+                        <th>星<br>期<br>三</th>
+                        <th>星<br>期<br>四</th>
+                        <th>星<br>期<br>五</th>
+                        <th>星<br>期<br>六</th>
+                        <th>星<br>期<br>日</th>
+                    </tr>
+                    </thead>
+                    <for start="0" end="5" name="i">
+                        <tr>
+                            <td>
+                                第{$i+1}节
+                            </td>
+                            <for start="0" end="7" name="j">
+                                <td>
+                                    本节课有{$WeekFlag[$i+1+5*$j]}人有空
+                                    <br>
+                                    <a data-toggle="modal" data-target="#myModal1" onclick="ShowMember('{$WeekStuNo[$i+1+5*$j]}','{$WeekName[$i+1+5*$j]}');">查看详情</a>
+                                </td>
+                            </for>
+                        </tr>
+                    </for>
+                </table>
+            </div>
+        </div>
+    </div><!--/.row-->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">有空成员有：</h4>
+                </div>
+                <div class="modal-body body1" id="body1">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="DownLoadExcel('{:U('FreeClass/DownLoadExcel')}')">导出EXCEL文件</button>
+    <button type="button" class="btn btn-primary" onclick="DownLoadWord('{:U('FreeClass/DownLoadWord')}')">导出WORD文件</button>
+</div><!--/.main-->
+
+
+<include file="Public:footer"/>
+<script src="__PUBLIC__/self/js/GetFreeClass.js"></script>
+</body>
+
+</html>

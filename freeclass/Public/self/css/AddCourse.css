@@ -1,0 +1,7 @@
+.addCourse{
+    display: block;
+    height: 50px;
+}
+.addCourse:hover{
+    cursor: pointer;
+}

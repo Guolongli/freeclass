@@ -1,0 +1,87 @@
+<include file="Public:header"/>
+
+<link href="__PUBLIC__/css/bootstrap-table.css" rel="stylesheet">
+<link href="__PUBLIC__/self/css/index.css" rel="stylesheet">
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+	<div class="row">
+		<ol class="breadcrumb">
+			<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+			<li class="active">我的课表</li>
+		</ol>
+	</div><!--/.row-->
+
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<table data-toggle="table">
+					<thead>
+					<tr>
+						<th></th>
+						<th>星<br>期<br>一</th>
+						<th>星<br>期<br>二</th>
+						<th>星<br>期<br>三</th>
+						<th>星<br>期<br>四</th>
+						<th>星<br>期<br>五</th>
+						<th>星<br>期<br>六</th>
+						<th>星<br>期<br>日</th>
+					</tr>
+					</thead>
+					<for start="0" end="5" name="i">
+						<tr>
+							<td>
+								第{$i+1}节
+							</td>
+							<for start="0" end="7" name="j">
+								<td>
+									<for start="0" end="count($course[$i+1+5*$j])" name="k">
+										{$course[$i+1+5*$j][$k]}
+										<eq name="UserStatus" value="T">
+											<neq name="course[$i+1+5*$j]" value="">
+												<br><a class="a" onclick="Look('{:U('Teacher/Look',array('course'=>urlencode($course[$i+1+5*$j][$k])))}');" data-toggle="modal" data-target="#myModal1">查看学生名单</a>
+												<br><a class="a" href="{:U('FreeClass/InputOption',array('action'=>'teacher','course'=>urlencode($course[$i+1+5*$j][$k])))}">统计学生空课</a><br>
+											</neq>
+										</eq>
+										<br>
+									</for>
+								</td>
+							</for>
+						</tr>
+					</for>
+					<eq name="UserStatus" value="T">
+						<span class="zhu">注：此处学生指已经使用过本系统并更新过课表学生</span>
+					</eq>
+				</table>
+			</div>
+		</div>
+	</div><!--/.row-->
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">本教学班学生有：</h4>
+				</div>
+				<table class="studentName">
+					<tr>
+						<td>可统计空课学生名单</td>
+						<td>暂不可统计空课学生名单<br>（本学期还未登陆过本系统）</td>
+					</tr>
+					<tr>
+						<td id="is"></td>
+						<td id="no"></td>
+					</tr>
+				</table>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!--/.main-->
+
+
+<include file="Public:footer"/>
+<script src="__PUBLIC__/self/js/index.js"></script>
+</body>
+
+</html>

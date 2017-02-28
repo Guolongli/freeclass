@@ -1,0 +1,66 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__PUBLIC__/self/css/InputOption.css">
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">空课统计</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">空课统计</h1>
+        </div>
+    </div><!--/.row-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">空课统计</div>
+                <div class="panel-body">
+                    <div class="col-md-6">
+                        <form role="form" action="{:U('FreeClass/GetFreeClass',array('action'=>'submit'))}" method="post" onsubmit="return CheckSubmit();">
+
+                            <div class="form-group">
+                                <label>请选择要统计的群组名</label>
+                                <select class="form-control" name="groupname">
+                                    <for start="0" end="count($mygroups)">
+                                        <option value="{$mygroups[$i]['id']}">{$mygroups[$i]['name']}</option>
+                                    </for>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="weeklabel">请选择要统计的周次范围</label>
+                                <select class="form-control weekselect" id="week1" onchange="GetFAnWei();">
+                                    <for start="1" end="21">
+                                        <option value="{$i}">{$i}</option>
+                                    </for>
+                                </select>
+                                <span class="weekfan">到</span>
+                                <select class="form-control weekselect" id="week2" onchange="GetFAnWei();">
+                                    <for start="1" end="21">
+                                        <option value="{$i}">{$i}</option>
+                                    </for>
+                                </select>
+                                <input type="text" id="week" name="week" class="form-control"  placeholder="请选择周次" onfocus="ShowWeek();">
+                                <div class="panel dropweek" id="dropweek">
+                                    <div class="panel-body">
+                                        <div id="wb"></div>
+                                        <div class="wb"><button type="button" class="btn weekbtn" onclick="Choose('single');">单周</button><button type="button" class="btn weekbtn" onclick="Choose('double')">双周</button><button type="button" class="btn weekbtn" onclick="Choose('all');">全选</button></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">确认统计</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.col-->
+    </div><!-- /.row -->
+</div><!--/.main -->
+<include file="Public:footer"/>
+<script src="__PUBLIC__/self/js/InputOption.js"></script>
+</body>
+
+</html>

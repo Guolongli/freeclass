@@ -1,0 +1,151 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__PUBLIC__/self/css/MyGroup.css">
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">课表管理</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>课表管理</h2>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body tabs">
+
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#all" data-toggle="tab">总课表</a></li>
+                    <li><a href="#yaan" data-toggle="tab">雅安校区课表</a></li>
+                    <li><a href="#wenjiang" data-toggle="tab">成都校区课表</a></li>
+                    <li><a href="#dujiangyan" data-toggle="tab">都江堰校区课表</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="all">
+                        <h4>总课表</h4>
+                        <table data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                            <thead>
+                            <tr>
+                                <th data-field="id" data-sortable="true">编号</th>
+                                <th data-field="name"  data-sortable="true">课程</th>
+                                <th data-field="userstatus"  data-sortable="true">教师</th>
+                                <th data-field="email" data-sortable="true">周次</th>
+                                <th data-field="mobile" data-sortable="true">时间</th>
+                                <th data-field="campus" data-sortable="true">教室</th>
+                                <th data-field="operation" data-sortable="true">校区</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <for start="0" end="count($allCourse)">
+                                <tr>
+                                    <td>{$allCourse[$i]['bianhao']}</td>
+                                    <td>{$allCourse[$i]['coursename']}</td>
+                                    <td>{$allCourse[$i]['teacher']}</td>
+                                    <td>{$allCourse[$i]['weekmessage']}</td>
+                                    <td>{$allCourse[$i]['time']}</td>
+                                    <td>{$allCourse[$i]['classroom']}</td>
+                                    <td>{$allCourse[$i]['campus']}</td>
+                                </tr>
+                            </for>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="yaan">
+                        <h4>雅安校区课表</h4>
+                        <table data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                            <thead>
+                            <tr>
+                                <th data-field="id" data-sortable="true">编号</th>
+                                <th data-field="name"  data-sortable="true">课程</th>
+                                <th data-field="userstatus"  data-sortable="true">教师</th>
+                                <th data-field="email" data-sortable="true">周次</th>
+                                <th data-field="mobile" data-sortable="true">时间</th>
+                                <th data-field="campus" data-sortable="true">教室</th>
+                                <th data-field="operation" data-sortable="true">校区</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <for start="0" end="count($yaanCourse)">
+                                <tr>
+                                    <td>{$yaanCourse[$i]['bianhao']}</td>
+                                    <td>{$yaanCourse[$i]['coursename']}</td>
+                                    <td>{$yaanCourse[$i]['teacher']}</td>
+                                    <td>{$yaanCourse[$i]['weekmessage']}</td>
+                                    <td>{$yaanCourse[$i]['time']}</td>
+                                    <td>{$yaanCourse[$i]['classroom']}</td>
+                                    <td>{$yaanCourse[$i]['campus']}</td>
+                                </tr>
+                            </for>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="wenjiang">
+                        <h4>成都校区课表</h4>
+                        <table data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                            <thead>
+                            <tr>
+                                <th data-field="id" data-sortable="true">编号</th>
+                                <th data-field="name"  data-sortable="true">课程</th>
+                                <th data-field="userstatus"  data-sortable="true">教师</th>
+                                <th data-field="email" data-sortable="true">周次</th>
+                                <th data-field="mobile" data-sortable="true">时间</th>
+                                <th data-field="campus" data-sortable="true">教室</th>
+                                <th data-field="operation" data-sortable="true">校区</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <for start="0" end="count($yaanCourse)">
+                                <tr>
+                                    <td>{$chengduCourse[$i]['bianhao']}</td>
+                                    <td>{$chengduCourse[$i]['coursename']}</td>
+                                    <td>{$chengduCourse[$i]['teacher']}</td>
+                                    <td>{$chengduCourse[$i]['weekmessage']}</td>
+                                    <td>{$chengduCourse[$i]['time']}</td>
+                                    <td>{$chengduCourse[$i]['classroom']}</td>
+                                    <td>{$chengduCourse[$i]['campus']}</td>
+                                </tr>
+                            </for>
+                            </tbody>
+                        </table>
+                    </div><div class="tab-pane fade" id="dujiangyan">
+                        <h4>都江堰校区课表</h4>
+                        <table data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                            <thead>
+                            <tr>
+                                <th data-field="id" data-sortable="true">编号</th>
+                                <th data-field="name"  data-sortable="true">课程</th>
+                                <th data-field="userstatus"  data-sortable="true">教师</th>
+                                <th data-field="email" data-sortable="true">周次</th>
+                                <th data-field="mobile" data-sortable="true">时间</th>
+                                <th data-field="campus" data-sortable="true">教室</th>
+                                <th data-field="operation" data-sortable="true">校区</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <for start="0" end="count($yaanCourse)">
+                                <tr>
+                                    <td>{$dujiangyanCourse[$i]['bianhao']}</td>
+                                    <td>{$dujiangyanCourse[$i]['coursename']}</td>
+                                    <td>{$dujiangyanCourse[$i]['teacher']}</td>
+                                    <td>{$dujiangyanCourse[$i]['weekmessage']}</td>
+                                    <td>{$dujiangyanCourse[$i]['time']}</td>
+                                    <td>{$dujiangyanCourse[$i]['classroom']}</td>
+                                    <td>{$dujiangyanCourse[$i]['campus']}</td>
+                                </tr>
+                            </for>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.panel-->
+    </div><!--/.row-->
+</div><!--/.main-->
+
+<include file="Public:footer"/>
+<script src="__PUBLIC__/self/js/MyGroup.js"></script>
+</body>
+
+</html>

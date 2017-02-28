@@ -1,0 +1,1 @@
+a:4:{i:0;s:6:"userid";i:1;s:8:"courseid";s:3:"_pk";a:2:{i:0;s:6:"userid";i:1;s:8:"courseid";}s:5:"_type";a:2:{s:6:"userid";s:16:"int(20) unsigned";s:8:"courseid";s:16:"int(20) unsigned";}}

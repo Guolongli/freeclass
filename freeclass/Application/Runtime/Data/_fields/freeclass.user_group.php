@@ -1,0 +1,1 @@
+a:5:{i:0;s:6:"userid";i:1;s:7:"groupid";i:2;s:6:"status";s:3:"_pk";a:2:{i:0;s:6:"userid";i:1;s:7:"groupid";}s:5:"_type";a:3:{s:6:"userid";s:7:"int(20)";s:7:"groupid";s:6:"int(8)";s:6:"status";s:10:"tinyint(1)";}}

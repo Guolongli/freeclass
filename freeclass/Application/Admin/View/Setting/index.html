@@ -1,0 +1,47 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__PUBLIC__/self/css/Setting.css">
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">系统设置</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">系统设置</h1>
+        </div>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">系统参数</div>
+                <div class="cont" id="cont">
+
+                </div>
+                <div class="panel-body">
+                    <for start="0" end="count($setting)">
+                        <form role="form" action="{:U('Setting/change')}" method="post">
+                            <div class="settinggroup">
+                                <span>key</span>
+                                <input class="settingcontroller" value="value">
+                            </div>
+                                <div class="settinggroup">
+                                    <span>{$setting[$i]['key']}</span>
+                                    <input class="settingcontroller" name="{$setting[$i]['key']}" placeholder="{$setting[$i]['value']}">
+                                </div>
+                            <span class="settingspan"><button class="btn btn-primary settingbtn" type="submit">确认修改</button></span>
+                        </form>
+                    </for>
+                </div>
+            </div>
+        </div>
+    </div><!--/.row-->
+</div><!--/.main-->
+<include file="Public:footer"/>
+<script src="__PUBLIC__/self/js/MyGroup.js"></script>
+</body>
+
+</html>

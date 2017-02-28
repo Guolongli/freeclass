@@ -1,0 +1,29 @@
+table tr td span{
+    display: block;
+    width:80px;
+    border: 1px solid grey;
+    color:grey;
+    margin-left: 10px;
+    text-align: center;
+    float: left;
+}
+table tr td span:hover{
+    cursor: pointer;
+}
+.cont button{
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    position: absolute;
+}
+.title{
+    width: 80%;
+    margin-left: 10%;
+    align-content: center;
+}
+.email{
+    width: 80%;
+    margin-left: 10%;
+    height: 200px;
+    margin-top: 10px;
+}

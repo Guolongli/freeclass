@@ -1,0 +1,67 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__PUBLIC__/self/css/MyGroup.css">
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">我的群组</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">我的群组</h1>
+        </div>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">我的群组</div>
+                <div class="cont" id="cont">
+
+                </div>
+                <div class="panel-body">
+                    <table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                        <thead>
+                        <tr>
+                            <th data-field="id" data-sortable="true">群组名</th>
+                            <th data-field="name"  data-sortable="true">群组口令</th>
+                            <th data-field="price" data-sortable="true">群组操作</th>
+                        </tr>
+                        </thead>
+                        <for start="0" end="count($groups)">
+                            <tr>
+                                <td >{$groups[$i]['name']}</td>
+                                <td >{$groups[$i]['word']}</td>
+                                <td >
+                                    <span onclick="Look('{:U('Group/Mygroup',array('action'=>'Look','id'=>$groups[$i]['id']))}');" data-toggle="modal" data-target="#myModal1">查看群成员</span>&nbsp;
+                                    <a href="{:U('Group/Mygroup',array('action'=>'DeleteGroup','id'=>$groups[$i]['id']))}"><span>解散群组</span></a>
+                                </td>
+                            </tr>
+                        </for>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!--/.row-->
+</div><!--/.main-->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">本群成员有：</h4>
+            </div>
+            <div class="modal-body" id="body1">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public:footer"/>
+<script src="__PUBLIC__/self/js/MyGroup.js"></script>
+</body>
+
+</html>

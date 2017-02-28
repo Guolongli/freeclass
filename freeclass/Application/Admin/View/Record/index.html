@@ -1,0 +1,54 @@
+<include file="Public:header"/>
+<link rel="stylesheet" href="__PUBLIC__/self/css/MyGroup.css">
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">操作日志</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">操作日志</h1>
+        </div>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">操作日志</div>
+                <div class="cont" id="cont">
+
+                </div>
+                <div class="panel-body">
+                    <table data-toggle="table" data-url="tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                        <thead>
+                        <tr>
+                            <th data-field="id" data-sortable="true">学/工 号</th>
+                            <th data-field="name" data-sortable="true">姓名</th>
+                            <th data-field="record"  data-sortable="true">操作</th>
+                            <th data-field="time" data-sortable="true">时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <for start="0" end="count($record)">
+                            <tr>
+                                <td>{$record[$i]['user']}</td>
+                                <td>{$name[$i]}</td>
+                                <td>{$record[$i]['operation']}</td>
+                                <td>{$record[$i]['time']}</td>
+                            </tr>
+                        </for>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!--/.row-->
+</div><!--/.main-->
+<include file="Public:footer"/>
+<script src="__PUBLIC__/self/js/MyGroup.js"></script>
+</body>
+
+</html>

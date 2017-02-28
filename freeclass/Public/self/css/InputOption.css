@@ -1,0 +1,56 @@
+.dropweek{
+    display: none;
+    width: 100%;
+    color: grey;
+    background: rgb(249,249,249);
+    position: relative;
+}
+.dropweek .week{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px ;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;
+    float: left;
+}
+.dropweek .week:hover{
+    cursor: pointer;
+    background: rgb(233,242,245);
+}
+.dropweek .wb{
+    display: block;
+    width: 100%;
+    float: left;
+}
+.dropweek .weekbtn{
+    display: block;
+    width: 30%;
+    margin-left: 3%;
+    float: left;
+}
+.dropweek .weekbtn:hover{
+    cursor: pointer;
+    background: rgb(233,242,245);
+}
+.weeklabel{
+    display: block;
+    width: 100%;
+}
+.weekfan{
+    display: block;
+    width: 5%;
+    margin-left: 3%;
+    line-height: 35px;
+    text-align: center;
+    float: left;
+}
+.weekselect{
+    display: block;
+    text-align: center;
+    width:40%;
+    float: left;
+    margin-left: 3%;
+    margin-bottom: 15px;
+}
