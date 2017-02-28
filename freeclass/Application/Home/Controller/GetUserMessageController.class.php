@@ -22,8 +22,8 @@ class GetUserMessageController extends Controller
     }
 
     public function GetUser(){
-        $index = new IndexController();
-        preg_match_all("/<td [\w\W]*?>([\w\W]*?)<\/td>/",$index->load,$message);
+        $load = new LoginController();
+        preg_match_all("/<td [\w\W]*?>([\w\W]*?)<\/td>/",$load->Load(),$message);
         $this->name = $message[1][5];
         $this->campus = $message[1][9];
     }
